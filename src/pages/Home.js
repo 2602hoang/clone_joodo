@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../component/Header';
 import Traveller from "../assets/Traveller.png"
 import Plane from '../assets/plane.png';
@@ -15,14 +15,25 @@ import Group1 from '../assets/Group1.png'
 import Group2 from '../assets/Group2.png'
 import Group3 from '../assets/Group3.png'
 import image from "../assets/Image.png"
-import { Card, Image } from 'antd';
+import { MailTwoTone, BgColorsOutlined,CustomerServiceOutlined,SettingTwoTone } from '@ant-design/icons';
+import { FloatButton, Button, Input } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import Footter from '../component/Footter';
 
 function Home() {
+    const [darkMode, setDarkMode] = useState(false);
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
     return (
-        <div className='w-full h-full justify-center items-center  '>
-            <Header />
+        <div className={`w-full h-full justify-center items-center ${darkMode ? 'dark' : ''}`}>
+
+            <Header darkMode={darkMode} />
+            {/* <button onClick={toggleDarkMode} className="mt-4 bg-blue-500 hover:bg-blue-700
+             text-white font-bold py-2 px-4 rounded">
+                    Toggle Dark Mode
+            </button> */}
 
             {/* <section className='flex '>
             
@@ -103,7 +114,7 @@ function Home() {
                     <div className='flex flex-col w-full md:ml-44 mt-12 space-y-3'>
                         <p className='text-red-700 text-base font-bold uppercase'>Best Destinations around the world</p>
                         {/* <img src={Plane} className='w-1/5'/> */}
-                        <h1 className='md:text-7xl text-5xl   text-black font-black font-mono '>Travel, enjoy<br />
+                        <h1 className='md:text-7xl text-5xl   text-black font-black font-mono animate-pulse '>Travel, enjoy<br />
                             and live a new<br />
                             and full life
                         </h1>
@@ -188,8 +199,8 @@ function Home() {
                     <div className='flex flex-col md:flex-row md:space-x-20 h-auto '>
 
                         <div
-                            className='rounded-3xl shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
-                            <img className='w-[315px] rounded-3xl h-[315px]' src={Rectangle1} />
+                            className='border-white border-2 rounded-3xl  shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
+                            <img className='w-[315px]  rounded-3xl h-[315px]' src={Rectangle1} />
                             <div className='flex flex-col '>
                                 <div className='flex flex-row '>
                                     <h3 className='text-left ml-4'> Rome, Italty</h3>
@@ -208,7 +219,7 @@ function Home() {
 
                         <div
 
-                            className='rounded-3xl shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
+                            className=' border-white border-2 rounded-3xl shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
 
 
                             <img className='w-[315px] rounded-3xl h-[315px]' src={Rectangle2} />
@@ -230,7 +241,7 @@ function Home() {
 
                         <div
 
-                            className='rounded-3xl shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
+                            className='border-white border-2 rounded-3xl shadow-lg rounded-t-3xl w-[315px] h-[auto] mt-10'>
 
 
                             <img className='w-[315px] rounded-3xl h-[315px]' src={Rectangle3} />
@@ -287,13 +298,55 @@ function Home() {
                         </div>
                     </div>
                     <div className=' flex md:ml-44'>
-                        <img src={image} className='ml-6'/>
+                        <img src={image} className='ml-6' />
                     </div>
                 </div>
             </section>
-            <Footter/>
+            <section>
+                <div className=' flex flex-col justify-center items-center my-2 ' >
+                    <div className='md:h-52 flex flex-col border-4 md:w-3/5 rounded-tl-3xl m-5'>
+                        <h2 className='text-[#5E6282] text-center text-2xl font-semibold mt-9 '>
+                            Subscribe to get information, latest news and other<br />
+                            interesting offers about Jadoo</h2>
+                        <div className='flex my-7 flex-row justify-center items-center '>
+                            <Input
+                                className='w-auto mx-4 '
+                                prefix={<MailTwoTone className="site-form-item-icon " />}
+                                type="email"
+                                placeholder="Your email"
+                            />
+
+                            {/* <button> Subscribe</button> */}
+                            <div className="w-auto flex  items-start justify-start max-w-full ">
+                                <Button type='default' className='bg-red-500 text-white'>
+                                    Subscribe
+
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            
+           
+            <FloatButton.Group
+                trigger="click"
+                type="primary"
+                style={{
+                    right: 30,
+                }}
+                icon={<SettingTwoTone />}
+            >
+                <FloatButton tooltip={<div>Dask mode</div>}  onClick={toggleDarkMode} icon={<BgColorsOutlined />} />
+
+                <FloatButton.BackTop tooltip={<div>Back Top</div>}
+                />
+            </FloatButton.Group>
+
+
+            <Footter />
         </div>
-        
+
     );
 }
 
