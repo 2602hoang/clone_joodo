@@ -53,12 +53,12 @@ function Header({ darkMode }) {
                         Sign up
                         </button>
                     </li>
-                    <li className='hidden md:flex m-8 md:m-0'>
+                    {/* <li className='hidden md:flex m-8 md:m-0'>
                         <select className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        <option value="volvo">EV</option>
-                        <option value="saab">VN</option>
+                        <option value="">EV</option>
+                        <option value="">VN</option>
                         </select>
-                    </li>
+                    </li> */}
                 </ul>
                 <div id='menu-button' className='top-0 left-0 z-20  md:hidden cursor-pointer flexd' onClick={toggleMenu}>
                     {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

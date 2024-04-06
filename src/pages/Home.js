@@ -15,13 +15,19 @@ import Group1 from '../assets/Group1.png'
 import Group2 from '../assets/Group2.png'
 import Group3 from '../assets/Group3.png'
 import image from "../assets/Image.png"
-import { MailTwoTone, BgColorsOutlined,CustomerServiceOutlined,SettingTwoTone } from '@ant-design/icons';
+import { MailTwoTone, BgColorsOutlined, RetweetOutlined,CustomerServiceOutlined,SettingTwoTone } from '@ant-design/icons';
 import { FloatButton, Button, Input } from 'antd';
 import Meta from 'antd/es/card/Meta';
 import Footter from '../component/Footter';
 
 function Home() {
     const [darkMode, setDarkMode] = useState(false);
+    const [value, setValue] = useState('EV'); // Initial value is 'EV'
+
+    const handleClick = () => {
+        // Toggle between 'EV' and 'VN'
+        setValue(value === 'EV' ? 'VN' : 'EV');
+    };
 
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
@@ -338,7 +344,7 @@ function Home() {
                 icon={<SettingTwoTone />}
             >
                 <FloatButton tooltip={<div>Dask mode</div>}  onClick={toggleDarkMode} icon={<BgColorsOutlined />} />
-
+                <FloatButton onClick={handleClick} icon={<RetweetOutlined />} description={value} tooltip={<div>{value}</div>}/>
                 <FloatButton.BackTop tooltip={<div>Back Top</div>}
                 />
             </FloatButton.Group>
