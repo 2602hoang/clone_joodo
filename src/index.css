@@ -8,4 +8,7 @@
 }
 .dark ul#menu li a {
     color: white; /* Change menu text color to white in dark mode */
-  }
+}
+.dark ul#menu li a:hover {
+    color: red; /* Change menu text color to red on hover */
+}
