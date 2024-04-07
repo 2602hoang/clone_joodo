@@ -32,10 +32,10 @@ function Footer({t}) {
                                             {t("About")}
                                         </div>
                                         <div className="font-thin ">
-                                            Ca{t("reers")}
+                                            {t("Careers")}
                                         </div>
                                         <div className="font-thin ">
-                                            M{t("obile")}
+                                            {t("Mobile")}
                                         </div>
                                     </div>
                                 </div>
