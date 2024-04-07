@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import Logo from '../assets/Logo.png';
 import { FloatButton } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 
-function Header({ darkMode }) {
+function Header({ darkMode,t }) {
     const [menuVisible, setMenuVisible] = useState(false);
-
+   
     const toggleMenu = () => {
         setMenuVisible(!menuVisible);
     };
@@ -25,32 +26,32 @@ function Header({ darkMode }) {
                         } md:visible md:bg-transparent md:h-auto md:flex-row md:justify-between md:static`}>
                      <li className='m-12 md:m-0'>
                         <a className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        Desitnations
+                       {t("Desitnations")}
                         </a>
                     </li>
                      <li className='m-8 md:m-0'>
                         <a className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        Hotels
+                        {t("Hotels")}
                         </a>
                     </li>
                      <li className='m-8 md:m-0'>
                         <a className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        Flights
+                        {t("Flights")}
                         </a>
                     </li>
                      <li className='m-8 md:m-0'>
                         <a className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        Bookings
+                       {t("Bookings")}
                         </a>
                     </li>
                     <li className='m-8 md:m-0'>
                         <a className='text-white md:text-black hover:text-red-500 transition duration-500 ease-in'>
-                        Login
+                        {t("Login")}
                         </a>
                     </li>
                     <li className='m-8 md:m-0 border-2 rounded-lg border-sky-500 px-3'>
                         <button className='text-white md:text-blue-500 hover:text-red-500 transition duration-500 ease-in'>
-                        Sign up
+                        {t("Sign up")}
                         </button>
                     </li>
                     {/* <li className='hidden md:flex m-8 md:m-0'>

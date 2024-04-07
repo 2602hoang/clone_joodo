@@ -1,7 +1,7 @@
 import { FacebookFilled, TwitterCircleFilled } from '@ant-design/icons';
 import React from 'react';
 
-function Footer() {
+function Footer({t}) {
     const footerClassName = ""; // Define or replace with a valid className
 
     return (
@@ -14,8 +14,8 @@ function Footer() {
                                 Jadoo.
                             </h1>
                             <div className="flex flex-col">
-                                <p className="font-thin  m-0">Book your trip in minute, get full<br /></p>
-                                <p className="font-thin m-0">Control for much longer.</p>
+                                <p className="font-thin  m-0">{t("Book your trip in minute, get full")}<br/></p>
+                                <p className="font-thin m-0">{t("Control for much longer.")}</p>
                             </div>
                         </div>
                     </div>
@@ -25,17 +25,17 @@ function Footer() {
                             <div className=" flex">
                                 <div className="mx-5">
                                     <b className="font-bold ">
-                                        Company
+                                        {t("Company")}
                                     </b>
                                     <div className="">
                                         <div className="font-thin ">
-                                            About
+                                            {t("About")}
                                         </div>
                                         <div className="font-thin ">
-                                            Careers
+                                            Ca{t("reers")}
                                         </div>
                                         <div className="font-thin ">
-                                            Mobile
+                                            M{t("obile")}
                                         </div>
                                     </div>
                                 </div>
@@ -43,35 +43,35 @@ function Footer() {
                                     <div className=" mx-5">
                                         <div className="">
                                             <b className="font-bold mx-55">
-                                                Contact
+                                                {t("Contact")}
                                             </b>
                                         </div>
                                         <div className="">
                                             <div className=" font-thin">
-                                                Help/FAQ
+                                            {t("Help/FAQ")}
                                             </div>
                                             <div className=" font-thin">
-                                                Press
+                                            {t("Press")}
                                             </div>
                                             <div className=" font-thin">
-                                                Affilates
+                                            {t("Affilates")}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="mx-5  ">
                                     <b className="font-bold mx-55">
-                                        More
+                                     {t("More")}
                                     </b>
                                     <div className="">
                                         <div className=" font-thin">
-                                            Airlinefees
+                                        {t("Airlinefees")}
                                         </div>
                                         <div className=" font-thin">
-                                            Airline
+                                            {t("Airline")}
                                         </div>
                                         <div className=" font-thin">
-                                            Low fare tips
+                                            {t("Low fare tips")}
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@ function Footer() {
                                 </div>
                                 <div className="">
                                     <div className=" relative tracking-[0.01em] leading-[25px] font-medium">
-                                        Discover our app
+                                        {t("Discover our app")}
                                     </div>
 
                                     <div className=" flex flex-row">
@@ -164,7 +164,7 @@ function Footer() {
 
                 <div className=" flex justify-center items-center my-7">
                     <div className="relative leading-[124.5%] font-medium">
-                        All rights reserved@jadoo.co
+                        {t("All rights")} reserved@jadoo.co
                     </div>
                 </div>
             </div>
