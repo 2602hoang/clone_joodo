@@ -37,7 +37,7 @@ function Home() {
         setDarkMode(!darkMode);
     };
     return (
-        <div className={`w-full h-full justify-center items-center ${darkMode ? 'dark' : ''}`}>
+        <div className={`w-full overflow-hidden h-full justify-center items-center ${darkMode ? 'dark' : ''}`}>
 
             <Header darkMode={darkMode} t={t}  />
 
@@ -93,7 +93,7 @@ function Home() {
                         <h1 className='font-mono font-bold text-4xl text-center'>{t("We Offer Best Services")}</h1>
 
                     </div>
-                    <div className='flex flex-col md:flex-row   md:my-48 my-10'>
+                    <div className='flex flex-col md:flex-row   md:my-48 '>
                         <div className='w-[302px] h-[350px] flex flex-col justify-center items-center text-center hover:border-4 hover:border-white hover:bg-blue-400 hover:text-red-600 rounded-3xl  '>
                             <img src={hinh1} />
                             <p>{t('Calculated Weather')}</p>
